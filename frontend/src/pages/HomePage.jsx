@@ -10,7 +10,7 @@ const HomePage = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Fetch experiences from API
+  // Fetch experiences from API...
   const fetchExperiences = async (search = '') => {
     try {
       setLoading(true);
