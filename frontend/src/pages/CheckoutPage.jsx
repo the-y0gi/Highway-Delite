@@ -220,7 +220,7 @@ const CheckoutPage = () => {
                 </div>
               </div>
 
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <label className="block text-sm text-gray-600 mb-2">Promo code (optional)</label>
                 <div className="flex gap-2">
                   <input
@@ -234,7 +234,28 @@ const CheckoutPage = () => {
                     Apply
                   </button>
                 </div>
-              </div>
+              </div> */}
+              <div className="mb-4">
+  <label className="block text-sm text-gray-600 mb-2">
+    Promo code (optional)
+  </label>
+
+  <div className="flex gap-2 w-full min-w-0">
+    <input
+      type="text"
+      value={formData.promoCode}
+      onChange={(e) => setFormData({ ...formData, promoCode: e.target.value })}
+      placeholder="Enter promo code"
+      className="flex-1 px-4 py-3 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 min-w-0"
+    />
+    <button
+      className="shrink-0 bg-black text-white px-4 sm:px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition whitespace-nowrap"
+    >
+      Apply
+    </button>
+  </div>
+</div>
+
 
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
