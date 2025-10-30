@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Experience = require('../models/Experience');
+const Experience = require('../models/experience');
 
 // GET all experiences with search
 router.get('/', async (req, res) => {

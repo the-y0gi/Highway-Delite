@@ -1,92 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Booking = require('../models/booking');
-const Experience = require('../models/Experience');
+const Experience = require('../models/experience');
 
-// POST create booking with availability check
-// router.post('/', async (req, res) => {
-//   try {
-//     const { experienceId, fullName, email, date, time, quantity, subtotal, tax, total } = req.body;
-    
-//     // Validate required fields
-//     if (!experienceId || !fullName || !email || !date || !time || !quantity) {
-//       return res.status(400).json({
-//         success: false,
-//         message: 'All fields are required'
-//       });
-//     }
 
-//     // Check experience exists
-//     const experience = await Experience.findById(experienceId);
-//     if (!experience) {
-//       return res.status(404).json({
-//         success: false,
-//         message: 'Experience not found'
-//       });
-//     }
-
-//     // Check availability
-//     const availability = experience.checkAvailability(date, time, quantity);
-//     if (!availability.available) {
-//       return res.status(400).json({
-//         success: false,
-//         message: `Only ${availability.availableSlots} slots available for selected time`
-//       });
-//     }
-
-//     // Validate date (should not be in past)
-//     const selectedDate = new Date(date);
-//     const today = new Date();
-//     today.setHours(0, 0, 0, 0);
-    
-//     if (selectedDate < today) {
-//       return res.status(400).json({
-//         success: false,
-//         message: 'Cannot book for past dates'
-//       });
-//     }
-
-//     // Create booking
-//     const booking = new Booking({
-//       experience: experienceId,
-//       fullName: fullName.trim(),
-//       email: email.trim(),
-//       date,
-//       time,
-//       quantity,
-//       subtotal,
-//       tax,
-//       total
-//     });
-
-//     await booking.save();
-    
-//     // Populate experience details for response
-//     await booking.populate('experience');
-    
-//     res.status(201).json({
-//       success: true,
-//       data: booking,
-//       message: 'Booking created successfully'
-//     });
-//   } catch (error) {
-//     console.error('Error creating booking:', error);
-    
-//     if (error.name === 'ValidationError') {
-//       const errors = Object.values(error.errors).map(err => err.message);
-//       return res.status(400).json({
-//         success: false,
-//         message: errors.join(', ')
-//       });
-//     }
-    
-//     res.status(500).json({ 
-//       success: false, 
-//       message: 'Server error while creating booking' 
-//     });
-//   }
-// });
-// POST create booking with availability check - UPDATED VERSION
+// POST create booking with availability check - 
 router.post('/', async (req, res) => {
   try {
     const { experienceId, fullName, email, date, time, quantity, subtotal, tax, total } = req.body;

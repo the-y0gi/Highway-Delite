@@ -4,7 +4,7 @@ const router = express.Router();
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 const Booking = require('../models/booking');
-const Experience = require('../models/Experience');
+const Experience = require('../models/experience');
 const Payment = require('../models/payment');
 
 const razorpay = new Razorpay({
