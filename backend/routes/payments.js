@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const Razorpay = require('razorpay');
@@ -169,10 +170,5 @@ router.post('/verify', async (req, res) => {
   }
 });
 
-// Payment webhook (for future use)
-router.post('/webhook', async (req, res) => {
-  // Implement webhook for payment failures, refunds etc.
-  res.json({ received: true });
-});
 
 module.exports = router;
